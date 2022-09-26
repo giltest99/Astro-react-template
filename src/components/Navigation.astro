@@ -1,0 +1,45 @@
+---
+const LINKS = [
+  { label: "Home", url: "/" },
+  /* { label: "", url: "" },
+  { label: "", url: "" }, */
+];
+---
+
+<nav>
+  <ul>
+    {
+      LINKS &&
+        LINKS.map((link) => (
+          <li>
+            <a href={link.url}>{link.label}</a>
+          </li>
+        ))
+    }
+  </ul>
+</nav>
+
+<style>
+  nav {
+    display: flex;
+    justify-content: center;
+    background-color: #333333;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    background-color: #333333;
+    list-style: none;
+    transition: background-color 0.25s ease;
+  }
+  li:hover {
+    background-color: #666666;
+  }
+  a {
+    display: inline-block;
+    color: #f1f1f1;
+    padding: 1rem;
+    text-decoration: none;
+  }
+</style>

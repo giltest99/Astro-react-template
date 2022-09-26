@@ -1,4 +1,7 @@
 ---
+import "../styles/global.css";
+import Navigation from "../components/Navigation.astro";
+
 const { title } = Astro.props;
 ---
 
@@ -11,7 +14,17 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    <h1>{title}</h1>
-    <slot />
+    <Navigation />
+    <main>
+      <h1>{title}</h1>
+      <slot />
+    </main>
   </body>
 </html>
+
+<style>
+    main {
+        width: 80rem;
+        margin: 0 auto;
+    }
+</style>
